@@ -1,0 +1,76 @@
+package ss;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Excelreadprgorm2 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//read program
+		FileInputStream srg=new FileInputStream("C:\\Users\\QA6\\Desktop\\Book.xlsx");
+		XSSFWorkbook wb=new XSSFWorkbook(srg);
+		XSSFSheet sh=wb.getSheet("sheet1");
+		XSSFRow rw=sh.getRow(5);
+		XSSFCell cel=rw.getCell(1);
+		System.out.println(cel);
+		//total how many rows of excel
+		int rw1=sh.getLastRowNum();
+		System.out.println("total number of rows +rw1");
+		for(int i=1;i<=rw1;i++)
+		{
+			XSSFRow rw2=sh.getRow(i);
+			XSSFCell cel2=rw2.getCell(1);
+			System.out.println(cel2);	
+			
+			//cel values program			
+	int cel3=rw.getLastCellNum();
+	System.out.println("total number of cels  "+cel);
+	for ( int j=1;j<=cel3;j++)
+	{
+		XSSFRow rw4=sh.getRow(j);
+		XSSFCell cel4=rw4.getCell(1);
+		System.out.println(cel4);
+		
+		///excelread progarm	
+		
+		FileInputStream src=new FileInputStream("C:\\Users\\QA6\\Desktop\\Book.xlsx");
+		XSSFWorkbook wb1=new XSSFWorkbook(src);
+		XSSFSheet sh1=wb1.getSheet("sheet1");
+		XSSFRow rw5=sh1.getRow(3);	
+		XSSFCell cel5=rw5.getCell(1);
+		System.out.println(cel5);
+		
+		int rw_2=sh1.getLastRowNum();
+		System.out.println("total number of rows" +rw_2);
+		for(int k=1;k<=rw_2;k++)
+		{
+			XSSFRow rw_3=sh1.getRow(k);
+			XSSFCell cel_1=rw_3.getCell(1);
+			System.out.println(cel_1);
+		}
+		
+		int cel_2=rw5.getLastCellNum();
+		System.out.println("total number of cels" +cel_2);
+		for(int l=1;l<=cel_2;l++)
+		{
+			XSSFRow rw_3=sh1.getRow(l);
+			XSSFCell cel_3=rw5.getCell(1);
+			System.out.println(cel_3);
+			
+		}
+	}
+			
+	}
+   }				
+		}
+		
+	
+
+
